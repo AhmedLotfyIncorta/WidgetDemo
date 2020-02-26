@@ -2,14 +2,19 @@
 
 FEATURE_PREFIX="feature/"
 
-List=$(git branch -r --merged develop)
+ORIGIN="origin/"
 
-for Item in ${List[*]} 
+BRANCH_NAME_AFTAR=${#ORIGIN}
+
+Merged_Branches_List=$(git branch -r --merged develop)
+
+for Branch in ${Merged_Branches_List[*]} 
   do
-  if [[ $Item == *$FEATURE_PREFIX* ]]
+  if [[ $Branch == *$FEATURE_PREFIX* ]]
   then
-    echo It will delete branch: $Item 
-    # git push origin --delete $Item
+    Branch_Name=${Branch:$BRANCH_NAME_AFTAR}
+    echo It will delete branch: $Branch_Name 
+    # git push origin --delete $Branch
   fi
   done
 
