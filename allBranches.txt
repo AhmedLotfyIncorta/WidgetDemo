@@ -3,5 +3,10 @@
   origin/feature/add-extist-code
   origin/feature/git-status
   origin/feature/trial_1
+  origin/feature/trial_2
   origin/feature/trial_2_non_merged
+  origin/feature/trial_3
+  origin/feature/trial_3_non_merged
+  origin/feature/trial_4
+  origin/feature/update-git-status
   origin/master
