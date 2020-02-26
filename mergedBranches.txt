@@ -1,0 +1,5 @@
+  origin/develop
+  origin/feature/add-extist-code
+  origin/feature/git-status
+  origin/feature/trial_1
+  origin/feature/trial_2_non_merged

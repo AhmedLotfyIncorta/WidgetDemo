@@ -9,7 +9,7 @@ for Item in ${List[*]}
   if [[ $Item == *$FEATURE_PREFIX* ]]
   then
     echo It will delete branch: $Item 
-    git push origin --delete $Item
+    # git push origin --delete $Item
   fi
   done
 
