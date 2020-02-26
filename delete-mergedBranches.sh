@@ -23,7 +23,6 @@ for Branch in ${Merged_Branches_List[*]}
     
     echo It will delete branch: $Branch_Name_After_Origin 
     
-    git push origin --delete $Branch_Name_After_Origin
+    # git push origin --delete $Branch_Name_After_Origin
   fi
   done
-  
