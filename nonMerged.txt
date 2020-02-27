@@ -1,4 +1,0 @@
-0a1
->   origin/HEAD -> origin/master
-5a7
->   origin/master
