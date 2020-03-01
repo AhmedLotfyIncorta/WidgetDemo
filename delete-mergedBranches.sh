@@ -2,8 +2,7 @@
 
 deleteAll() {
   Branches=("$@")
-   for Branch in $Branches 
-    do
+   for Branch in ${Branches[@]}; do
       echo $Branch
       git push origin --delete $Branch
     done
@@ -19,8 +18,7 @@ fi
 
 echo -e This bash script will delete all attached branches: 
 
-for Branch in ${Merged_Branches_List[*]} 
-do
+for Branch in ${Merged_Branches_List[*]}; do
     echo $Branch 
 done
 
