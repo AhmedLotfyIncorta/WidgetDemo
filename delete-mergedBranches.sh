@@ -1,29 +1,26 @@
 #!/bin/bash 
 
-FEATURE_PREFIX="feature/"
+deleteAll() {
+   for Branch in $1 
+    do
+      git push origin --delete $Branch
+    done
+ }
 
-ORIGIN="origin/"
+IFS=$'\n' read -rd '' -a Merged_Branches_List <$1
 
-Branch_Name_After_Origin_AFTAR_ORIGIN_INDEX=${#ORIGIN}
-
-Merged_Branches_List=$(git branch -r --merged develop)
-
-if [ ${#Merged_Branches_List[@]} -eq 0 ] 
-then
-  echo Empty Merged Branches List
-else
-  echo ${Merged_Branches_List[@]}
-fi 
+echo -e This bash script will delete all attached branches: 
 
 for Branch in ${Merged_Branches_List[*]} 
-  do
-  if [[ $Branch == *$FEATURE_PREFIX* ]]
-  then
-    Branch_Name_After_Origin=${Branch:$Branch_Name_After_Origin_AFTAR_ORIGIN_INDEX}
-    
-    echo It will delete branch: $Branch_Name_After_Origin 
-    
-    git push origin --delete $Branch_Name_After_Origin
-  fi
-  done
-  
+do
+    echo $Branch 
+done
+
+read -r -p "Are you sure? [yes/no]" response
+ if [[ $response =~ ^(yes) ]]; then
+    deleteAll ${Merged_Branches_List[@]]}
+  else
+    echo Cancelled
+ fi
+
+ echo Exit
